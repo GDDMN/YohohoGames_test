@@ -15,9 +15,9 @@ public class EcsEntryPoint : MonoBehaviour
 
     systems.ConvertScene();
     
-    AddSystems();
-    AddOneFrames();
     AddInjections();
+    AddOneFrames();
+    AddSystems();
     
     systems.Init();
   }
@@ -29,7 +29,9 @@ public class EcsEntryPoint : MonoBehaviour
 
   private void AddSystems()
   {
-
+    systems.
+      Add(new PlayerInputSystem()).
+      Add(new MovementControllerSystem());
   }
 
   private void AddOneFrames()
@@ -49,6 +51,7 @@ public class EcsEntryPoint : MonoBehaviour
       return;
 
     systems.Destroy();
+    systems = null;
     world.Destroy();
     world = null;
   }
