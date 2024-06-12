@@ -6,4 +6,5 @@ public struct MovabelComponent
 {
   public CharacterController CharacterController;
   public float Speed;
+
 }

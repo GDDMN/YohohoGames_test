@@ -23,7 +23,6 @@ sealed public class PlayerInputSystem : IEcsRunSystem
 
   public void Run()
   {
-    Debug.Log("Running");
     foreach(var i in _directionFilter)
     {
       ref var directionComponent = ref _directionFilter.Get2(i);
