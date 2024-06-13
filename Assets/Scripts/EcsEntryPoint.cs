@@ -31,7 +31,8 @@ public class EcsEntryPoint : MonoBehaviour
   {
     systems.
       Add(new PlayerInputSystem()).
-      Add(new MovementControllerSystem());
+      Add(new MovementControllerSystem()).
+      Add(new ItemGenerationSystem());
   }
 
   private void AddOneFrames()
