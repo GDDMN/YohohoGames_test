@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
 
-sealed public class PlayerInputSystem : IEcsRunSystem
+sealed public class PlayerInputSystem : IEcsRunSystem, IEcsInitSystem, IEcsDestroySystem
 {
   private readonly EcsWorld _world = null;
   private readonly EcsFilter<PlayerTag, DirectionCmponent> _directionFilter = null;
@@ -10,13 +10,13 @@ sealed public class PlayerInputSystem : IEcsRunSystem
 
   private Vector2 _direction;
 
-  public PlayerInputSystem()
+  public void Init()
   {
     _inputActions = new InputActions();
     _inputActions.Enable();
   }
 
-  ~PlayerInputSystem()
+  public void Destroy()
   {
     _inputActions.Disable();
   }

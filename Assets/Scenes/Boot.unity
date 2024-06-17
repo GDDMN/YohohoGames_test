@@ -402,6 +402,8 @@ MonoBehaviour:
     GenerationTime: 5
     AvaliableTypes: 000000000100000002000000
     SpawnPoint: {fileID: 1439829686}
+    MaxItemsCount: 3
+    ItemsCount: 0
 --- !u!114 &519317183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,10 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2bea107856fbf04ebc6782ea9055b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items:
-  - {fileID: 11400000, guid: cd59757db444fe04f92c2fac72073e84, type: 2}
-  - {fileID: 11400000, guid: 57645a3994ab4a94f8c971a277d45960, type: 2}
-  - {fileID: 11400000, guid: 3e926cdb9fcf9bd438838351525a66fe, type: 2}
+  _configs: {fileID: 11400000, guid: a739feecacd15ff4f8863150bb8601fe, type: 2}
 --- !u!4 &1295647992
 Transform:
   m_ObjectHideFlags: 0
@@ -1474,7 +1473,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &2118206887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,7 +1488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     CharacterController: {fileID: 2118206886}
-    Speed: 0.1
+    Speed: 3
 --- !u!114 &2118206888
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,4 +5,3 @@ public class ItemConfig : ScriptableObject
 {
   public ItemData Data;
 }
-

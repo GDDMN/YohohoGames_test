@@ -10,11 +10,7 @@ public class ItemGenerationSystem : IEcsRunSystem
 
   private float _time;
   private Transform _spawnPoint;
-
-  public ItemGenerationSystem()
-  {
-
-  }
+  private int _itemsCount = 0;
 
   public void Run()
   {
@@ -25,9 +21,13 @@ public class ItemGenerationSystem : IEcsRunSystem
       float geneationTime = generatorComponent.GenerationTime;
       List<ItemType> avaliableTypes = generatorComponent.AvaliableTypes;
       Transform spawnPoint = generatorComponent.SpawnPoint;
+      int maxItemsCount = generatorComponent.MaxItemsCount;
+      generatorComponent.ItemsCount = _itemsCount;
+
+      if (_itemsCount >= maxItemsCount)
+        return;
 
       _spawnPoint = spawnPoint;
-
       _time -= Time.deltaTime;
 
       if (_time > 0)
@@ -38,7 +38,9 @@ public class ItemGenerationSystem : IEcsRunSystem
 
       GameObject item = Resources.Load<GameObject>(data.WayToPrefab);
       GameObject.Instantiate(item.transform, spawnPoint.position, Quaternion.identity);
+
       _time = generatorComponent.GenerationTime;
+      _itemsCount++;
     }
   }
 

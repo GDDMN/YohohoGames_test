@@ -24,7 +24,7 @@ sealed public class MovementControllerSystem : IEcsRunSystem
 
       var rawDirection = (transform.right * direction.x) + (transform.forward * direction.y);
 
-      characterController.Move(rawDirection * speed);
+      characterController.Move(rawDirection * (speed * Time.deltaTime));
       Rotate(rotatableTransform, direction);
     }
   }
