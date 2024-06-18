@@ -60,7 +60,7 @@ public class ItemGenerationSystem : IEcsRunSystem, IEcsInitSystem
 
     ref var itemComponent = ref itemEntity.Get<ItemComponent>();
 
-    _spawnPoint += item.transform.up;
+    _spawnPoint = item.transform.GetChild(1).position;
   }
 
   private void SetCmponents(EcsEntity entity)

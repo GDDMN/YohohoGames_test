@@ -402,7 +402,7 @@ MonoBehaviour:
     GenerationTime: 5
     AvaliableTypes: 000000000100000002000000
     SpawnPoint: {fileID: 1439829686}
-    MaxItemsCount: 3
+    MaxItemsCount: 7
     ItemsCount: 0
 --- !u!114 &519317183
 MonoBehaviour:
