@@ -1,0 +1,4 @@
+repository "YohohoGames_test@apawkin@cloud"
+  path "/"
+    br "/main"
+    co "/main"
